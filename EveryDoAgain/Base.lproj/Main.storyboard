@@ -57,7 +57,7 @@
                             <outlet property="delegate" destination="pGg-6v-bdr" id="Y6K-Cp-Qkv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Master" id="tQt-TN-PWz"/>
+                    <navigationItem key="navigationItem" title="To Do" id="tQt-TN-PWz"/>
                     <connections>
                         <segue destination="bOg-Ok-Bqm" kind="presentation" identifier="newToDo" id="HCd-Sy-6Nk"/>
                     </connections>
@@ -143,7 +143,6 @@
                             <constraint firstItem="n5X-k5-SlS" firstAttribute="centerY" secondItem="LTg-gL-geB" secondAttribute="centerY" id="2kw-RV-GaB"/>
                             <constraint firstItem="kbu-5h-njt" firstAttribute="top" secondItem="Rt0-h5-mp6" secondAttribute="bottom" constant="45" id="352-0x-0Ff"/>
                             <constraint firstItem="Rt0-h5-mp6" firstAttribute="leading" secondItem="JuM-4y-eXD" secondAttribute="leadingMargin" id="6vY-Hp-o4m"/>
-                            <constraint firstItem="Rt0-h5-mp6" firstAttribute="top" secondItem="bVa-lB-MTf" secondAttribute="bottom" constant="20" id="7LM-Uf-Ljd"/>
                             <constraint firstItem="Rt0-h5-mp6" firstAttribute="leading" secondItem="kbu-5h-njt" secondAttribute="leading" id="8xR-AV-tml"/>
                             <constraint firstItem="3Vc-z8-iZe" firstAttribute="top" secondItem="Res-De-PSB" secondAttribute="top" id="BlM-Ll-8uV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Rt0-h5-mp6" secondAttribute="trailing" id="CFj-NT-H54"/>
@@ -158,6 +157,7 @@
                             <constraint firstItem="EIP-w9-tma" firstAttribute="leading" secondItem="kbu-5h-njt" secondAttribute="trailing" constant="61" id="fvV-4i-erX"/>
                             <constraint firstItem="3Vc-z8-iZe" firstAttribute="leading" secondItem="LTg-gL-geB" secondAttribute="leading" id="h32-Fz-Qzk"/>
                             <constraint firstItem="EIP-w9-tma" firstAttribute="trailing" secondItem="3Vc-z8-iZe" secondAttribute="trailing" id="hAL-Gs-F15"/>
+                            <constraint firstItem="Rt0-h5-mp6" firstAttribute="top" secondItem="bVa-lB-MTf" secondAttribute="bottom" constant="20" id="hsz-6o-tkb"/>
                             <constraint firstItem="ZjI-zl-0Vr" firstAttribute="top" secondItem="LTg-gL-geB" secondAttribute="bottom" constant="58" id="qjr-uB-GOt"/>
                             <constraint firstItem="n5X-k5-SlS" firstAttribute="leading" secondItem="Res-De-PSB" secondAttribute="leading" id="sU5-ca-w53"/>
                         </constraints>
@@ -178,7 +178,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="createTodoButton" destination="ZjI-zl-0Vr" id="UnB-gp-EXJ"/>
                         <outlet property="descriptionTextField" destination="3Vc-z8-iZe" id="5Ge-Qe-rZQ"/>
@@ -207,24 +206,77 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Lei-5M-9Gs">
-                                <rect key="frame" x="20" y="292" width="560" height="17"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Dov-c3-VXf">
+                                <rect key="frame" x="112" y="278" width="191" height="29"/>
+                                <segments>
+                                    <segment title="High"/>
+                                    <segment title="Medium"/>
+                                    <segment title="Low"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Xc-vL-GFD">
+                                <rect key="frame" x="16" y="94" width="35" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1uf-Gj-02D">
+                                <rect key="frame" x="112" y="90" width="472" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KP4-FO-ipW">
+                                <rect key="frame" x="16" y="135" width="88" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lmS-9y-9qK">
+                                <rect key="frame" x="112" y="135" width="472" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" size="system"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="hmu-wS-wGu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priority:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TS8-qc-0tt">
+                                <rect key="frame" x="16" y="281" width="55" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.16078431372549021" green="0.45098039215686275" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Lei-5M-9Gs" firstAttribute="leading" secondItem="MMQ-IT-qOo" secondAttribute="leading" constant="20" symbolic="YES" id="62x-JV-TTJ"/>
-                            <constraint firstItem="Lei-5M-9Gs" firstAttribute="centerY" secondItem="MMQ-IT-qOo" secondAttribute="centerY" id="JzS-HC-Rnl"/>
-                            <constraint firstAttribute="trailing" secondItem="Lei-5M-9Gs" secondAttribute="trailing" constant="20" symbolic="YES" id="pXB-RP-Zz6"/>
+                            <constraint firstItem="lmS-9y-9qK" firstAttribute="top" secondItem="KP4-FO-ipW" secondAttribute="top" id="07o-Eb-tR1"/>
+                            <constraint firstItem="5Xc-vL-GFD" firstAttribute="top" secondItem="cIm-e0-J51" secondAttribute="bottom" constant="30" id="4kV-x2-Xaa"/>
+                            <constraint firstItem="1uf-Gj-02D" firstAttribute="leading" secondItem="5Xc-vL-GFD" secondAttribute="trailing" constant="61" id="5KZ-5r-SBA"/>
+                            <constraint firstItem="1uf-Gj-02D" firstAttribute="centerY" secondItem="5Xc-vL-GFD" secondAttribute="centerY" constant="0.5" id="7L4-t5-3jm"/>
+                            <constraint firstItem="1uf-Gj-02D" firstAttribute="leading" secondItem="KP4-FO-ipW" secondAttribute="trailing" constant="8" id="Asf-Eg-jhm"/>
+                            <constraint firstItem="TS8-qc-0tt" firstAttribute="centerY" secondItem="Dov-c3-VXf" secondAttribute="centerY" id="HLd-Bg-6tX"/>
+                            <constraint firstItem="1uf-Gj-02D" firstAttribute="trailing" secondItem="MMQ-IT-qOo" secondAttribute="trailingMargin" id="JFo-S4-buJ"/>
+                            <constraint firstItem="5Xc-vL-GFD" firstAttribute="leading" secondItem="MMQ-IT-qOo" secondAttribute="leadingMargin" id="NKj-0f-0Eo"/>
+                            <constraint firstItem="Dov-c3-VXf" firstAttribute="top" secondItem="lmS-9y-9qK" secondAttribute="bottom" constant="15" id="XMF-26-1lH"/>
+                            <constraint firstItem="1uf-Gj-02D" firstAttribute="centerY" secondItem="5Xc-vL-GFD" secondAttribute="centerY" constant="0.5" id="eH5-Qf-w6D"/>
+                            <constraint firstItem="1uf-Gj-02D" firstAttribute="trailing" secondItem="lmS-9y-9qK" secondAttribute="trailing" id="kkw-Yk-YdC"/>
+                            <constraint firstItem="TS8-qc-0tt" firstAttribute="leading" secondItem="KP4-FO-ipW" secondAttribute="leading" id="lR8-xA-tnD"/>
+                            <constraint firstItem="KP4-FO-ipW" firstAttribute="top" secondItem="5Xc-vL-GFD" secondAttribute="bottom" constant="20" id="tNh-KN-DUq"/>
+                            <constraint firstItem="lmS-9y-9qK" firstAttribute="leading" secondItem="Dov-c3-VXf" secondAttribute="leading" id="yOo-1F-C6J"/>
+                            <constraint firstItem="1uf-Gj-02D" firstAttribute="leading" secondItem="lmS-9y-9qK" secondAttribute="leading" id="yVt-g1-E7G"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="eH5-Qf-w6D"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Detail" id="cra-N8-TIN"/>
+                    <navigationItem key="navigationItem" title="To Do Details" id="cra-N8-TIN"/>
                     <connections>
-                        <outlet property="detailDescriptionLabel" destination="Lei-5M-9Gs" id="sCT-F7-F6f"/>
+                        <outlet property="descriptionTextField" destination="lmS-9y-9qK" id="suu-ts-ixN"/>
+                        <outlet property="prioritySegmentedControl" destination="Dov-c3-VXf" id="FDJ-n5-nw6"/>
+                        <outlet property="titleTextField" destination="1uf-Gj-02D" id="r24-Ni-46s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
@@ -236,6 +288,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bOg-Ok-Bqm" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dtk-A0-GIc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

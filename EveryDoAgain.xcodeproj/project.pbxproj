@@ -438,6 +438,7 @@
 				2710153A1B41BBB800BE9224 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2710153B1B41BBB800BE9224 /* Build configuration list for PBXNativeTarget "EveryDoAgainTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +447,7 @@
 				2710153D1B41BBB800BE9224 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

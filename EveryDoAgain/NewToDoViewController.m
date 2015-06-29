@@ -35,6 +35,23 @@
     self.navigationController.view.backgroundColor = [UIColor clearColor];
     self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
     
+    // Have no status bar
+//    [self modalPresentationCapturesStatusBarAppearance];
+    //[self prefersStatusBarHidden];
+    
+//    //[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+}
+
+//-(void)viewDidAppear:(BOOL)animated {
+    //[self.navigationController ];
+//    [super viewDidAppear:animated];
+//    [self setNeedsStatusBarAppearanceUpdate];
+//}
+
+
+-(UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,15 +62,12 @@
 
 - (IBAction)createNewTodo:(id)sender {
     NSManagedObjectContext *context = self.managedObjectContext;
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:@"Todo" inManagedObjectContext:context];
+    Todo *newTodoItem = [NSEntityDescription insertNewObjectForEntityForName:@"Todo" inManagedObjectContext:context];
     
-    
-    
-    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
-    [newManagedObject setValue:self.titleTextField.text forKey:@"title"];
-    [newManagedObject setValue:self.descriptionTextField.text forKey:@"todoDescription"];
-    [newManagedObject setValue:[NSNumber numberWithInteger:self.prioritySegmentedControl.selectedSegmentIndex] forKey:@"priority"];
+    newTodoItem.timeStamp = [NSDate date];
+    newTodoItem.title = self.titleTextField.text;
+    newTodoItem.todoDescription = self.descriptionTextField.text;
+    newTodoItem.priority = [NSNumber numberWithInteger:self.prioritySegmentedControl.selectedSegmentIndex];
     
     
     // Save the context.

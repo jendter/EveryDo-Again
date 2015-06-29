@@ -10,8 +10,6 @@
 
 @interface NewToDoViewController : UIViewController
 
-//@property (weak, nonatomic) id<NewToDoViewControllerDelegate> delegate;
-
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end
