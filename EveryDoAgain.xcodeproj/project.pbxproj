@@ -16,6 +16,7 @@
 		271015261B41BBB800BE9224 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 271015251B41BBB800BE9224 /* Images.xcassets */; };
 		271015291B41BBB800BE9224 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 271015271B41BBB800BE9224 /* LaunchScreen.xib */; };
 		271015351B41BBB800BE9224 /* EveryDoAgainTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 271015341B41BBB800BE9224 /* EveryDoAgainTests.m */; };
+		271015431B41BDA200BE9224 /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = 271015421B41BDA200BE9224 /* Todo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,8 @@
 		2710152E1B41BBB800BE9224 /* EveryDoAgainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EveryDoAgainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		271015331B41BBB800BE9224 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		271015341B41BBB800BE9224 /* EveryDoAgainTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EveryDoAgainTests.m; sourceTree = "<group>"; };
+		271015411B41BDA200BE9224 /* Todo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Todo.h; sourceTree = "<group>"; };
+		271015421B41BDA200BE9224 /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Todo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,8 @@
 				2710151D1B41BBB800BE9224 /* MasterViewController.m */,
 				2710151F1B41BBB800BE9224 /* DetailViewController.h */,
 				271015201B41BBB800BE9224 /* DetailViewController.m */,
+				271015411B41BDA200BE9224 /* Todo.h */,
+				271015421B41BDA200BE9224 /* Todo.m */,
 				271015221B41BBB800BE9224 /* Main.storyboard */,
 				271015251B41BBB800BE9224 /* Images.xcassets */,
 				271015271B41BBB800BE9224 /* LaunchScreen.xib */,
@@ -228,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				271015211B41BBB800BE9224 /* DetailViewController.m in Sources */,
+				271015431B41BDA200BE9224 /* Todo.m in Sources */,
 				2710151E1B41BBB800BE9224 /* MasterViewController.m in Sources */,
 				2710151B1B41BBB800BE9224 /* EveryDoAgain.xcdatamodeld in Sources */,
 				271015181B41BBB800BE9224 /* AppDelegate.m in Sources */,
