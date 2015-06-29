@@ -35,19 +35,7 @@
     self.navigationController.view.backgroundColor = [UIColor clearColor];
     self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
     
-    // Have no status bar
-//    [self modalPresentationCapturesStatusBarAppearance];
-    //[self prefersStatusBarHidden];
-    
-//    //[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    
 }
-
-//-(void)viewDidAppear:(BOOL)animated {
-    //[self.navigationController ];
-//    [super viewDidAppear:animated];
-//    [self setNeedsStatusBarAppearanceUpdate];
-//}
 
 
 -(UIStatusBarStyle)preferredStatusBarStyle {
