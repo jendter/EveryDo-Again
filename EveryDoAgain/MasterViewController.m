@@ -9,6 +9,7 @@
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 #import "Todo.h"
+#import "NewToDoViewController.h"
 
 @interface MasterViewController ()
 
@@ -37,6 +38,7 @@
 }
 
 - (void)insertNewObject:(id)sender {
+    /*
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
     NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
@@ -54,6 +56,9 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
+     */
+    [self performSegueWithIdentifier:@"newToDo" sender:sender];
+    
 }
 
 #pragma mark - Segues
@@ -63,6 +68,12 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
         [[segue destinationViewController] setDetailItem:object];
+    }
+    
+    if ([[segue identifier] isEqualToString:@"newToDo"]) {
+        UINavigationController *destinationNavController = segue.destinationViewController;
+        NewToDoViewController *destination = [destinationNavController.viewControllers firstObject];
+        destination.managedObjectContext = self.managedObjectContext;
     }
 }
 

@@ -12,9 +12,9 @@
 // Is this where I should be keeping the enum?
 // Change to a NSEnum
 typedef enum {
-    PriorityLow,
-    PriorityMedium,
-    PriorityHigh
+    PriorityLow = 0,
+    PriorityMedium = 1,
+    PriorityHigh = 2
 } Priority;
 
 @interface Todo : NSManagedObject
